@@ -39,7 +39,7 @@ $F(p) = f(p)$ for all $p \in O(p) \cap Z$ and $f$ is thus smooth on $Z$.
 \begin{enumerate}[label=\textbf{\alph*}]
 \item{
 	Let $f^{-1} \colon \ \mathbb{R}^k \to B_a$ be the smooth map defined by
-	$$f^{-1}(y) = \frac{ay}{\sqrt{a^2 + \vert\vert y \vert\vert}}$$
+	$$f^{-1}(y) = \frac{ay}{\sqrt{a^2 + \vert\vert y \vert\vert^2}}$$
 	Note that $f^{-1}(0)=0$ and $\lim_{y\to \infty}f^{-1}(y)=a$.
 	That is, $f^{-1}$ maps $[0,\infty)^k$ to $[0,a)^k$, which makes intuitive sense
 	as $f$ did the opposite.
@@ -117,7 +117,7 @@ $(U \times V)\cap(X\times Y)$, so $f \times g$ is too.
 	$n$ or less. Thus $\lim_{x \to 0} f^{(n)}(x) = 0$ for all $n \in \mathbb{N}$, so $f$ is smooth.
 }
 \item{
-	Subtraction and $(xy) \mapsto xy$ are smooth functions, so $g$, the composition of smooth functions,
+	Subtraction and $(x,y) \mapsto xy$ are smooth functions, so $g$, the composition of smooth functions,
 	 is too. Since $g$ is smooth and positive function on $(a,b)$,
 	we have that $c=\int_{-\infty}^{\infty}g\ dx$ is nonzero. Hence,
 	$h(x) =\frac{1}{c}\int_{-\infty}^{x}g\ dx = \frac{1}{c}G(x)$ by the Second Fundamental Theorem of Calculus.
