@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+\title{MTH 532 Homework 2}
+\author{Roy Howie}
+\date{February 2, 2017}
+\maketitle
+
+\subsection*{Exercise 1}
+Let $f\colon U\to X$ and $g\colon V\to Y$ be parameterizations for,
+%open neighborhoods $U$ and $V$,
+let $X\subset Y$ be a submanifold, and
+let $i\colon X\to Y$ be an inclusion map. This produces the following
+commutative diagram:
+
+\begin{center}
+\begin{tikzpicture}
+% unit
+\SetGraphUnit{3} 
+
+% style for vertex
+\GraphInit[vstyle=Empty] 
+\tikzset{VertexStyle/.append style = {shape=rectangle,inner sep=0pt}} 
+
+% vertices  
+\Vertex[L=$U$]{1} 
+\EA[unit=3,L=$V$](1){2} 
+\NO[unit=2,L=$X$](1){4} 
+\NO[unit=2,L=$Y$](2){3}
+
+% edges and labels
+\begin{scope}[every node/.style={midway},>=latex']
+	\draw[->]   (1)--(2) node [above] {$h$};
+  	\draw[->]   (4)--(3) node [below] {$i$};
+  	\draw[->]   (2)--(3) node [right] {$g$};
+  	\draw[->]   (1)--(4) node [left]  {$f$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+Note that $h=g^{-1} \circ i \circ f$. However,
+$h=g^{-1}\circ f$ too, as $i$ is the inclusion map
+bringing $X$ into $Y$.
+Without loss of generality and to simplify notation,
+let $f(0)=g(0)=x\in X$.
+Since $g^{-1} \circ i \circ f = g^{-1}\circ f$, taking
+the derivative on both sides yields
+$d(g^{-1} \circ i \circ f)=d(g^{-1}\circ f)$,
+or that $dg^{-1}_0\circ di_x\circ df_0=dg^{-1}_0\circ df_0$.
+Moving terms gives
+$di_x=(dg_0\circ dg^{-1}_0)\circ (df_0\circ df^{-1}_0)$.
+This is the identity map, so $di_x$ is indeed an inclusion map.
+\hfill $\square$
+
+\subsection*{Exercise 3}
+Let $V$ be a vector subspace of $\mathbb{R}^N$ with
+dimension $n$. Then there exists a parameterization
+$f\colon\mathbb{R}^n\to V$. But $f$ is linear, so
+$df=f$. Thus, $T_x(V)=df(\mathbb{R}^n)=f(\mathbb{R}^n)=V$.
+\hfill $\square$
+
+\subsection*{Exercise 4}
+Let $f\colon X\to Y$ be a diffeomorphism, then there is a smooth
+map $f^{-1}\colon Y\to X$ such that $f\circ f^{-1}=Id$.
+Note $d\ Id =d(f\circ f^{-1})$, implying that
+$Id=df_x \circ df^{-1}_y$ for all $x\in X$ with $y=f(x)$.
+Hence, $df_x$ has an inverse
+in the form of $df^{-1}_y$, so it is indeed an isomorphism of
+tangent spaces.
+%More strongly, this says that $(df_x)^{-1} = d(f^{-1})_{f(x)}$.
+\hfill $\square$
+
+\subsection*{Exercise 5}
+Let $k\ne l$ and suppose $f\colon\mathbb{R}^k\to\mathbb{R}^l$
+is a diffeomorphism. Then
+$df_x\colon T_x(\mathbb{R}^k)\to T_{f(x)}(\mathbb{R}^l)$
+is an isomorphism of tangent spaces.
+Note $T_x(\mathbb{R}^k) = \mathbb{R}^k$ and
+$T_{f(x)}(\mathbb{R}^l) = \mathbb{R}^l$ for all $x$.
+But $\text{dim}\ \mathbb{R}^k=k \ne l = \text{dim}\ \mathbb{R}^l$,
+meaning $df$ is not bijective. But $df=f$, so $f$ is also
+not bijective. Contradiction! Hence, $f$ is not a diffeomorphism.
+\hfill $\square$
+
+\subsection*{Exercise 8}
+Let $H=\{(x,y,z)\mid x^2+y^2-z^2=a\}$ be a hyperboloid and let
+$h\colon B_a(0)\to H\subset\mathbb{R}^3$ be a local parameterization
+of $(\sqrt{a},0,0)$, where $B_a(0)$ is the ball of radius $a$ centered
+at the origin. Define $h$ as $(u,v)\mapsto(\sqrt{a+u^2-v^2},u,v)$. (All
+credit to Wolfram for that parameterization.)
+Then $dh$ is the matrix
+\begin{equation*}
+\begin{bmatrix}    u/x & -v/x \\    1 & 0 \\	0 & 1\end{bmatrix}\end{equation*}
+where $x=\sqrt{a+u^2-v^2}$. Therefore, $dh_{(\sqrt{a},0,0)}$ is the matrix
+$\left[ \begin{smallmatrix} 0&0\\ 1&0\\ 0&1\end{smallmatrix} \right]$
+and the tangent space is the span of $dh_{(\sqrt{a},0,0)}$,
+or the yz-plane.
+\hfill $\square$
+
+\subsection*{Exercise 9}
+\begin{enumerate}[label=(\arabic*)]
+\item{
+	Let $a\colon U\to X$ and $b\colon V\to Y$ be parameterizations
+	of $X$ and $Y$, respectively.
+	Note that $X\times Y = \text{Im}(a\times b)$.
+	Hence, $T_{(x,y)}(X\times Y) =
+		\text{Im}\ d(a\times b)_{(0,0)}$,
+	which can be rewritten as the image of
+	$\left[
+		\begin{smallmatrix}
+			da_0  & 0   \\
+			0     & db_0
+		\end{smallmatrix}
+	\right]$,
+	or $T_xX\times T_yY$.	
+}
+\item{
+	Let $f\colon X\times Y\to X$ be the projection map and let
+	$a\colon U\to X$ and $b\colon V\to Y$ be parameterizations.
+	This forms a commutative diagram, meaning there is a map from
+	$U\times V$ to $U$, $h=a^{-1}\circ f\circ (a\times b)$.
+	For notation and without loss of generality, take
+	$(a\times b)(0,0)=(x,y)$.
+	Shuffling terms yields
+	$f=a\circ h \circ (a\times b)^{-1}$, implying
+	$df_{(x,y)}=da_0 \circ dh_{(0,0)}
+		\circ d(a\times b)^{-1}_{(0,0)}$,
+	which is the desired projection.
+}
+\item{
+	Use $a$ and $b$ as before and let $h\colon U\to U\times V$
+	defined by $u\mapsto(u,0)$. Fix $y=b(0)$ and let
+	$f\colon X\to X\times Y$ be the injective mapping
+	$x\mapsto(x,y)$.
+	Next, consider $f=(a\times b)\circ h\circ a^{-1}$.
+	Note that $dh=h$, as $h$ is linear.
+	Therefore, $df_x=(da_0\times db_0)\circ h\circ da^{-1}_0$.
+	Thus, $df_x(v)=(v,0)$.
+}
+\item{
+	Intuition: project each space and then smoothly map it
+	to $(x,0)$ and $(0,y)$ so that the direct sum ``fills'' the
+	``containing'' space.
+	
+	Let $\pi_x\colon X\times Y\to X$ and
+	$\pi_y\colon X\times Y\to Y$ be natural projections.
+	Let $i_x\colon X'\to\mathbb{R}^N$ and
+	$i_y\colon Y'\to\mathbb{R}^N$ be smooth inclusions
+	defined by $x\mapsto(x,0)$ and $y\mapsto(0,y)$, respectively.
+	($\mathbb{R}^N$ is assumed to ``contain'' $X\times Y$.)
+	Then clearly $f\times g=i_x\circ f\circ \pi_x +
+		i_y\circ g\circ\pi_y$.
+	This implies $d(f\times g)_{(x,y)}=df_x\times dg_y$.
+}
+\end{enumerate}
+\hfill $\square$
+
+\end{document}
