@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{enumitem}
+%\usepackage{tkz-graph}
+%\usetikzlibrary{arrows}
+
+\begin{document}
+
+\title{MTH 532 Homework 3}
+\author{Roy Howie}
+\date{February 9, 2017}
+\maketitle
+
+\subsection*{Exercise 3}
+\subsection*{Exercise 4}
+\subsection*{Exercise 6}
+\begin{enumerate}[label=(\alph*)]
+\item{}
+\item{}
+\item{}
+\item{}
+\end{enumerate}
+
+\subsection*{Exercise 7}
+\begin{enumerate}[label=(\alph*)]
+\item{
+	Let $g\colon\mathbb{R}^1\to S^1$ be defined by
+	$t\mapsto(\cos2\pi t,\ \sin2\pi t)$, then
+	$dg_t = (-2\pi\sin2\pi t,\ 2\pi\cos2\pi t)$.
+	Since $dg_t\ne(0,0)$ for all $t$, by the
+	Inverse Function Theorem, $g$ is a local
+	diffeomorphism.
+}
+\item{
+	Let $G=g\times g\colon L\to S^1\times S^1$
+	be defined by $(a,b)\mapsto(\cos2\pi a,\ \sin2\pi a,
+	\cos2\pi b,\ \sin2\pi b)$, where $L\subset\mathbb{R}^2$
+	is a line of irrational slope. Without loss of generality,
+	suppose $L$ has no constant term, as that only serves to ``shift''
+	the image of $L$ about the torus. That is, let $i\in\mathbb{R}-\mathbb{Q}$
+	and define $L=\{(x,y)\mid y=ix\}$.
+	
+	Next, suppose $G(s,is)=G(t,it)$. Then $\cos2\pi s=\cos2\pi t$,
+	so $s-t\in\mathbb{Z}$. Similarly, $\cos2\pi is=\cos2\pi it$,
+	so $is-it=i(s-t)\in\mathbb{Z}$. But $i$ is irrational, so
+	$i(s-t)$ is in $\mathbb{Z}$ iff $s-t=0$. Thus, $G$ is injective.
+	\hfill $\square$
+}
+\end{enumerate}
+
+\subsection*{Exercise 8}
+Let $h\colon\mathbb{R}^1\to\mathbb{R}^2$ be defined by
+$t\mapsto\frac{1}{2}(e^t+e^{-t},e^t-e^{-t})$.
+To show $h$ is an embedding, we must show that it is
+an immersion, injective, and proper. Note that
+$dh_t= \frac{1}{2}
+\left[
+	\begin{smallmatrix}
+		e^t-e^{-t}\\
+		e^t+e^{-t}
+	\end{smallmatrix}
+\right]$
+is injective for all $t$, as $e^{-t}$ is everywhere nonzero.
+Hence, $h$ is an immersion.
+
+Next, suppose $h$ is not injective. Then there exist $a\ne b$
+such that $h(a)=h(b)$. But then
+\begin{align*}
+	e^a+e^{-b} &= e^b+e^{-a}\\
+	e^{a+b}(e^a+e^{-b}) &= (e^b+e^{-a})e^{a+b}\\
+	e^a(e^{a+b}+1) &= (e^{b+a}+1)e^b\\
+	e^a &= e^b
+\end{align*}
+Since $x\mapsto e^x$ is injective, $a=b$. A contradiction, so
+$h$ is injective.
+
+Since $h$ is continuous, the preimage of a closed set is closed.
+We need only show the preimage of a bounded set is itself bounded.
+Suppose $B\subset\mathbb{R}^2$ is a bounded set. If
+$B\cap h(\mathbb{R}^1)=\varnothing$, we're done, as the empty set
+is trivially bounded.
+Otherwise, let $B_{x,y}(r)$ be the ball of radius $r$ centered at
+$(x,y)$ containing $B$. Let $x_0 = h^{-1}(x, h(x))$, then
+$h^{-1}(B)$ is bounded by the interval $(x_0-r,x_0+r)$.
+
+Hence, $h$ is proper and thus an embedding.
+
+To show its image is one nappe of the hyperbola $x^2-y^2=1$, consider
+\begin{align*}
+	\frac{1}{4}(e^t+e^{-t})^2-\frac{1}{4}(e^t-e^{-t})^2 &= 1\\
+	(e^{2t}+2+e^{-2t})-(e^{2t}-2+e^{-2t}) &= 4\\
+	(e^{2t}-e^{2t})+(e^{-2t}-e^{-2t})+4 &= 4\\
+\end{align*}
+which clearly checks out.
+\hfill $\square$
+
+\end{document}
