@@ -1,1 +1,1 @@
-#mth532: Differential Topology
+#mth532: differential topology
