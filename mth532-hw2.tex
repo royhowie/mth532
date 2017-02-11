@@ -24,16 +24,16 @@ commutative diagram:
 \begin{center}
 \begin{tikzpicture}
 % unit
-\SetGraphUnit{3} 
+\SetGraphUnit{3}
 
 % style for vertex
-\GraphInit[vstyle=Empty] 
-\tikzset{VertexStyle/.append style = {shape=rectangle,inner sep=0pt}} 
+\GraphInit[vstyle=Empty]
+\tikzset{VertexStyle/.append style = {shape=rectangle,inner sep=0pt}}
 
-% vertices  
-\Vertex[L=$U$]{1} 
-\EA[unit=3,L=$V$](1){2} 
-\NO[unit=2,L=$X$](1){4} 
+% vertices
+\Vertex[L=$U$]{1}
+\EA[unit=3,L=$V$](1){2}
+\NO[unit=2,L=$X$](1){4}
 \NO[unit=2,L=$Y$](2){3}
 
 % edges and labels
@@ -112,7 +112,7 @@ or the yz-plane.
 \subsection*{Exercise 9}
 \begin{enumerate}[label=(\arabic*)]
 \item{
-	Let $a\colon U\to X$ and $b\colon V\to Y$ be parameterizations
+	Let $a\colon U\to X$ and $b\colon V\to Y$ be local parameterizations
 	of $X$ and $Y$, respectively.
 	Note that $X\times Y = \text{Im}(a\times b)$.
 	Hence, $T_{(x,y)}(X\times Y) =
@@ -124,11 +124,11 @@ or the yz-plane.
 			0     & db_0
 		\end{smallmatrix}
 	\right]$,
-	or $T_xX\times T_yY$.	
+	or $T_xX\times T_yY$.
 }
 \item{
 	Let $f\colon X\times Y\to X$ be the projection map and let
-	$a\colon U\to X$ and $b\colon V\to Y$ be parameterizations.
+	$a\colon U\to X$ and $b\colon V\to Y$ be local parameterizations.
 	This forms a commutative diagram, meaning there is a map from
 	$U\times V$ to $U$, $h=a^{-1}\circ f\circ (a\times b)$.
 	For notation and without loss of generality, take
@@ -153,7 +153,7 @@ or the yz-plane.
 	Intuition: project each space and then smoothly map it
 	to $(x,0)$ and $(0,y)$ so that the direct sum ``fills'' the
 	``containing'' space.
-	
+
 	Let $\pi_x\colon X\times Y\to X$ and
 	$\pi_y\colon X\times Y\to Y$ be natural projections.
 	Let $i_x\colon X'\to\mathbb{R}^N$ and
