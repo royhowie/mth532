@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\GL}{GL}
+
+\begin{document}
+
+\title{MTH 532 Homework 4}
+\author{Roy Howie}
+\date{February 16, 2017}
+\maketitle
+
+\subsection*{Exercise 7}
+\subsection*{Exercise 9}
+\subsection*{Exercise 12}
+\subsection*{Exercise A1}
+Note that $M_n\C\cong\C^{n^2}$ and that $\det\colon M_n\C\to\C$ is a smooth
+function. Since $\C$ is Hausdorff, $0\in\C$ is closed. Likewise, because of the
+continuitity of $\det$, $\det^{-1}(0)$ is closed too. Note that $\GL_n\C=
+M_n\C-\det^{-1}(0)$, so $\GL_n\C$ is open and, therefore, a smooth manifold.
+
+Furthermore, $\GL_n\C$ is a group under matrix multiplication with identity
+$I_n$. Matrix multiplication is smooth, as it is a polynomial function in the
+entries of the product; matrix inversion is smooth because it is a rational
+function (Cramer's rule), as the determinant is non-vanishing in $\GL_n\C$.
+
+% Note that $M_n\C$, the set of all $n\times n$ matrices with entries in $\C$, is
+% a manifold, as $M_n\C\cong\C^{n^2}$. Therefore, $\GL_n\C$ is a smooth manifold,
+% as $\GL_n\C=M_n\C-\det^{-1}(0)$. Furthermore, $\GL_n\C$ has dimension $2n^2$ as
+% it has a basis consisting of all matrices with a single element as $1$ or $i$.
+%
+% We know $\GL_n\C$ is a group (with smooth operations) from algebra.
+
+Hence, $\GL_n\C$ is a Lie group of dimension $2n^2$, as its basis consists of
+matrices with one element in $\{1,i\}$.
+\hfill $\square$
+
+\subsection*{Exercise A2}
+\subsection*{Exercise A3}
+\subsection*{Exercise A4}
+Let $U_1$ be the unitary group of size 1 and let $S^1$ be the circle group, then
+$id\colon U_1\to S^1$ defined by $r\mapsto r$ is a diffeomorphism. Suppose $x\in
+U_1$, then $x\bar{x}=1$. Recall, however, that for $z\in\C$, $\|z\|^2=z\bar{z}$.
+Therefore, $\|x\|^2 = 1$, which implies $x\in S^1$. The reverse direction is no
+different.
+
+Note that $SU_2$ is the set
+$
+  \left\{
+    \left(
+      \begin{smallmatrix}
+        a & \text{-}\bar{b}\\
+        b & \bar{a}
+      \end{smallmatrix}
+    \right)
+    \mid
+    a,b\in\C \wedge
+    a\bar{a}+b\bar{b}=1
+  \right\}
+$. Consider the smooth maps $\sigma\colon\R^4\to\C^2$ and $\phi\colon\C^2\to
+M_2\C$ defined respectively by $(x,y,z,w)\mapsto(x+iy, z+iw)$ and $(a,b)\mapsto
+\left(
+  \begin{smallmatrix}
+    a & \text{-}\bar{b}\\
+    b & \bar{a}
+  \end{smallmatrix}
+\right)$. Suppose $s=(x,y,z,w)\in S^3$, then $x^2+y^2+z^2+w^2=1$. Let $a=x+iy$
+and $b=z+iw$ and consider the identity $z\bar{z}=x^2+y^2$ for complex $z=x+iy$.
+Thus, $a\bar{a}+b\bar{b}=1$, so $\phi\circ\sigma(s)\in U_2$. To show the
+opposite direction is then trivial. Hence, $S^3$ is diffeomorphic to $SU_2$.
+\hfill $\square$
+
+\end{document}
