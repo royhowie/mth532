@@ -25,60 +25,71 @@
 \subsection*{Exercise 9}
 \subsection*{Exercise 12}
 \subsection*{Exercise A1}
-Note that $M_n\C\cong\C^{n^2}$ and that $\det\colon M_n\C\to\C$ is a smooth
-function. Since $\C$ is Hausdorff, $0\in\C$ is closed. Likewise, because of the
-continuitity of $\det$, $\det^{-1}(0)$ is closed too. Note that $\GL_n\C=
-M_n\C-\det^{-1}(0)$, so $\GL_n\C$ is open and, therefore, a smooth manifold.
+  Note that $M_n\C\cong\C^{n^2}$ and that $\det\colon M_n\C\to\C$ is a smooth
+  function. Since $\C$ is Hausdorff, $0\in\C$ is closed. Likewise, because of
+  the continuitity of $\det$, $\det^{-1}(0)$ is closed too. Note that $\GL_n\C=
+  M_n\C-\det^{-1}(0)$, so $\GL_n\C$ is open and, therefore, a smooth manifold.
 
-Furthermore, $\GL_n\C$ is a group under matrix multiplication with identity
-$I_n$. Matrix multiplication is smooth, as it is a polynomial function in the
-entries of the product; matrix inversion is smooth because it is a rational
-function (Cramer's rule), as the determinant is non-vanishing in $\GL_n\C$.
+  Furthermore, $\GL_n\C$ is a group under matrix multiplication with identity
+  $I_n$. Matrix multiplication is smooth, as it is a polynomial function in the
+  entries of the product; matrix inversion is smooth because it is a rational
+  function (Cramer's rule), as the determinant is non-vanishing in $\GL_n\C$.
 
-% Note that $M_n\C$, the set of all $n\times n$ matrices with entries in $\C$, is
-% a manifold, as $M_n\C\cong\C^{n^2}$. Therefore, $\GL_n\C$ is a smooth manifold,
-% as $\GL_n\C=M_n\C-\det^{-1}(0)$. Furthermore, $\GL_n\C$ has dimension $2n^2$ as
-% it has a basis consisting of all matrices with a single element as $1$ or $i$.
-%
-% We know $\GL_n\C$ is a group (with smooth operations) from algebra.
-
-Hence, $\GL_n\C$ is a Lie group of dimension $2n^2$, as its basis consists of
-matrices with one element in $\{1,i\}$.
-\hfill $\square$
+  Hence, $\GL_n\C$ is a Lie group of dimension $2n^2$, as its basis consists of
+  matrices with one element in $\{1,i\}$.
+  \hfill $\square$
 
 \subsection*{Exercise A2}
 \subsection*{Exercise A3}
 \subsection*{Exercise A4}
-Let $U_1$ be the unitary group of size 1 and let $S^1$ be the circle group, then
-$id\colon U_1\to S^1$ defined by $r\mapsto r$ is a diffeomorphism. Suppose $x\in
-U_1$, then $x\bar{x}=1$. Recall, however, that for $z\in\C$, $\|z\|^2=z\bar{z}$.
-Therefore, $\|x\|^2 = 1$, which implies $x\in S^1$. The reverse direction is no
-different.
+  Let $U(1)$ be the unitary group and let $S^1$ be the circle group, then $f
+  \colon U(1)\to S^1$ defined by $(a+ib)\mapsto (a,b)$ is a diffeomorphism.
+  Suppose $x\in U(1)$, then $x\bar{x}=1$. Recall, for complex $z$, $\|z\|^2=z
+  \bar{z}$. Therefore, $\|x\| = 1$, which implies $x\in S^1$. The reverse
+  direction is no different.
 
-Note that $SU_2$ is the set
-$
-  \left\{
-    \left(
-      \begin{smallmatrix}
-        a & \text{-}\bar{b}\\
-        b & \bar{a}
-      \end{smallmatrix}
-    \right)
-    \mid
-    a,b\in\C \wedge
-    a\bar{a}+b\bar{b}=1
-  \right\}
-$. Consider the smooth maps $\sigma\colon\R^4\to\C^2$ and $\phi\colon\C^2\to
-M_2\C$ defined respectively by $(x,y,z,w)\mapsto(x+iy, z+iw)$ and $(a,b)\mapsto
-\left(
-  \begin{smallmatrix}
-    a & \text{-}\bar{b}\\
-    b & \bar{a}
-  \end{smallmatrix}
-\right)$. Suppose $s=(x,y,z,w)\in S^3$, then $x^2+y^2+z^2+w^2=1$. Let $a=x+iy$
-and $b=z+iw$ and consider the identity $z\bar{z}=x^2+y^2$ for complex $z=x+iy$.
-Thus, $a\bar{a}+b\bar{b}=1$, so $\phi\circ\sigma(s)\in U_2$. To show the
-opposite direction is then trivial. Hence, $S^3$ is diffeomorphic to $SU_2$.
-\hfill $\square$
+  $SU(2)$ is the set $\{A\in U(2)\mid\det A = 1\}$. Suppose $A=
+  \left(
+    \begin{smallmatrix}
+      a   &   b\\
+      c   &   d
+    \end{smallmatrix}
+  \right)\in SU(2)$, then we have that $A^{-1}=\bar{A}^T$, or that
+  $
+  \left(
+    \begin{smallmatrix}
+      d           &   \text{-}b\\
+      \text{-}c   &   a
+    \end{smallmatrix}
+  \right) =
+  \left(
+    \begin{smallmatrix}
+      \bar{a}&\bar{c}\\
+      \bar{b}&\bar{d}
+    \end{smallmatrix}
+  \right)
+  $. Thus, $A$ must be of the form $
+  \left(
+    \begin{smallmatrix}
+      a & \text{-}\bar{b}\\
+      b & \bar{a}
+    \end{smallmatrix}
+  \right)
+  $ for $a,b\in\C$. Since $\det A=1$, note that $a\bar{a}+b\bar{b}=1$.
+
+  Next, consider the smooth maps $\sigma\colon\R^4\to\C^2$ and $\phi\colon\C^2
+  \to M_2\C$ defined by $(x,y,z,w)\mapsto(x+iy, z+iw)$ and $(a,b)\mapsto
+  \left(
+    \begin{smallmatrix}
+      a & \text{-}\bar{b}\\
+      b & \bar{a}
+    \end{smallmatrix}
+  \right)$, respectively. Let $m=\phi\circ\sigma$.
+
+  Suppose $s=(x,y,z,w)\in S^3$, then $x^2+y^2+z^2+w^2=1$. Denote $\sigma(s)$ as
+  $(a,b)=(x+iy,z+iw)$. Recall, for $z=x+iy$, one has $z\bar{z}=x^2+y^2$. Hence,
+  $a\bar{a}+b\bar{b}=1$, so $m(s)\in SU(2)$. Since $\sigma$ and $\phi$ are both
+  smooth and invertible, $S^3$ is diffeomorphic to $SU(2)$ via $m$.
+  \hfill $\square$
 
 \end{document}
