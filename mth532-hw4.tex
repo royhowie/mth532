@@ -12,7 +12,9 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\M}{M}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
 
 \begin{document}
 
@@ -24,6 +26,7 @@
 \subsection*{Exercise 7}
 \subsection*{Exercise 9}
 \subsection*{Exercise 12}
+
 \subsection*{Exercise A1}
   Note that $M_n\C\cong\C^{n^2}$ and that $\det\colon M_n\C\to\C$ is a smooth
   function. Since $\C$ is Hausdorff, $0\in\C$ is closed. Likewise, because of
@@ -40,7 +43,29 @@
   \hfill $\square$
 
 \subsection*{Exercise A2}
+  Consider the map $\det\colon\M(n,\C)\to\C$. Note that $\SL(n,\C)$ is equal to
+  the kernel of the determinant, i.e., $\SL(n,\C)=\det^{-1}(1)$. If $1$ is a
+  regular value of $\det$, then $\dim\SL(n,\C)=\dim\GL(n,\C)-\dim\C=2n^2-2$.
+  Thus, we wish to show that $1$ is a regular value. We do this by showing $0$
+  is the only critical value:
+  \begin{align*}
+    d\det\nolimits_0(h) &= \lim_{t\to0}\frac{\det(0+th)-\det0}{t}\\
+                        &= \lim_{t\to0}\frac{\det(th)}{t}\\
+                        &= \lim_{t\to0}t^{n-1}\det(h)\\
+                        &= 0
+  \end{align*}
+  Indeed, $0$ is a critical value. Next, consider $A\in\GL(n,\C)$:
+  \begin{align*}
+    d\det\nolimits_A(A) &= \lim_{t\to 0}\frac{\det(A+tA)-\det(A)}{t}\\
+                        &= \lim_{t\to 0}\frac{(1+t)^n\det(A)-\det(A)}{t}\\
+                        &= \det(A)\lim_{t\to 0}\frac{(1+t)^n-1}{t}\\
+                        &= \det(A)n
+  \end{align*}
+  Which is nonzero, as $\det(A)\ne0$. Hence, $1$ is a regular value of $\det$.
+  \hfill $\square$
+
 \subsection*{Exercise A3}
+
 \subsection*{Exercise A4}
   Let $U(1)$ be the unitary group and let $S^1$ be the circle group, then $f
   \colon U(1)\to S^1$ defined by $(a+ib)\mapsto (a,b)$ is a diffeomorphism.
