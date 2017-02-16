@@ -13,6 +13,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\He}{H}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SL}{SL}
 
@@ -28,17 +29,17 @@
 \subsection*{Exercise 12}
 
 \subsection*{Exercise A1}
-  Note that $M_n\C\cong\C^{n^2}$ and that $\det\colon M_n\C\to\C$ is a smooth
+  Note that $\M(n,\C)\cong\C^{n^2}$ and that $\det\colon\M(n,\C)\to\C$ is a smooth
   function. Since $\C$ is Hausdorff, $0\in\C$ is closed. Likewise, because of
-  the continuitity of $\det$, $\det^{-1}(0)$ is closed too. Note that $\GL_n\C=
-  M_n\C-\det^{-1}(0)$, so $\GL_n\C$ is open and, therefore, a smooth manifold.
+  the continuitity of $\det$, $\det^{-1}(0)$ is closed too. Note that $\GL(n,\C)
+  =M(n,\C)-\det^{-1}(0)$, so $\GL(n,\C)$ is open and, therefore, a smooth manifold.
 
-  Furthermore, $\GL_n\C$ is a group under matrix multiplication with identity
+  Furthermore, $\GL(n,\C)$ is a group under matrix multiplication with identity
   $I_n$. Matrix multiplication is smooth, as it is a polynomial function in the
   entries of the product; matrix inversion is smooth because it is a rational
-  function (Cramer's rule), as the determinant is non-vanishing in $\GL_n\C$.
+  function (Cramer's rule), as the determinant is non-vanishing in $\GL(n,\C)$.
 
-  Hence, $\GL_n\C$ is a Lie group of dimension $2n^2$, as its basis consists of
+  $\GL(n,\C)$ is thus a Lie group of dimension $2n^2$, as its basis consists of
   matrices with one element in $\{1,i\}$.
   \hfill $\square$
 
@@ -65,6 +66,45 @@
   \hfill $\square$
 
 \subsection*{Exercise A3}
+  Consider the map $f\colon\M(n,\C)\to\He(n)$ defined by $A\mapsto AA^*$,
+  where $\He(n)$ is the set of all $n\times n$ Hermitian matrices and $A^*$ is
+  the conjugate transpose. Note that $f^{-1}(I_n)$, where $I_n$ is the identity
+  matrix, equals $U(n)$.
+
+  Next, denote $AA^*$ as $C$, then $C^*=(AA^*)^*=A^*(A^*)^*=A^*A=C$, so $C$ is
+  Hermitian. Then, observe that Hermitian matrices are of the form
+  \begin{equation*}
+    \begin{bmatrix}
+      a       & c       & \cdots & x\\
+      \bar{c} & b       & \cdots & y\\
+      \vdots  & \vdots  & \ddots & \vdots\\
+      \bar{x} & \bar{y} & \cdots & z
+    \end{bmatrix}
+  \end{equation*}
+  Note that there are $n$ real-valued elements along the diagonal. The elements
+  in the upper half of the matrix are dependent on those in the lower half,
+  hence the rest of the matrix has $1+2+\cdots+(n-1)$ free complex variables.
+  Thus, $H(n)$ has dimension $2*[1+2+\cdots+(n-1)]+n=n^2$.
+
+  Next, we wish to show that $I_n$ is a regular value of $f$:
+  \begin{align*}
+    df_A(h) &= \lim_{t\to0}\frac{f(A+th)-f(A)}{t}\\
+            &= \lim_{t\to0}\frac{(A+th)(A+th)^*-AA^*}{t}\\
+            &= \lim_{t\to0}\frac{AA^*+thA^*+tAh^*+t^2hh^*-AA^*}{t}\\
+            &= \lim_{t\to0} hA^*+Ah^*+thh^*\\
+            &= hA^*+Ah^*
+  \end{align*}
+  $I_n$ is then a regular value iff $df_A$ is surjective for all $A\in U(n)$.
+  Let $C\in U(n)$, then $C=\frac{1}{2}C+\frac{1}{2}C^*$. Then, solving for $h$
+  in $hA^*=\frac{1}{2}C$ yields $h=\frac{1}{2}CA$. This checks out, as
+  \begin{align*}
+    hA^*+Ah^* &= (\frac{1}{2}CA)A^*+A(\frac{1}{2}CA)^*\\
+              &= \frac{1}{2}C(AA^*)+\frac{1}{2}A(A^*C^*)\\
+              &= \frac{1}{2}CI_n+\frac{1}{2}I_nC\\
+              &= C
+  \end{align*}
+  So $df_A$ is indeed surjective for all $A\in U(n)$.
+  \hfill $\square$
 
 \subsection*{Exercise A4}
   Let $U(1)$ be the unitary group and let $S^1$ be the circle group, then $f
