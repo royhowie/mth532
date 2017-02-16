@@ -25,8 +25,52 @@
 \maketitle
 
 \subsection*{Exercise 7}
+  Let $f\colon X\to Y$ with $X$ compact and $\dim X=\dim Y$. Let $y$ be a
+  regular value of $f$. We wish to show $f^{-1}(y)=\{x_1,\cdots,x_n\}$ is
+  finite and that there is a neighorbood $U$ of $y$ such that $f^{-1}(U)$ is
+  equal to the disjoint union of $V_1$ through $V_n$, where $V_i$ is a
+  neighborhood of $x_i$ and diffeomorphic to $U$.
+
+  First, apply the Inverse Function Theorem, which says each $x_i\in f^{-1}(y)$
+  has an open neighborhood $O(x_i)$ diffeomorphic to a neighborhood $O_i(y)$ of
+  $y$. Since diffeomorphisms are bijective, we must have $O(x_i)\cap O(x_j)=
+  \varnothing$ for all $i\ne j$. $f^{-1}(y)$ is finite as $X$ is compact.
+
+  Next, apply the hint. Note that $O'=X-\bigcup{O(x_i)}$ is closed, so it is
+  compact. Hence, $f(O')$ is compact and does not contain $y$. Let $U=Y-f(O')$
+  and let $\tilde{O}(x_i)=O(x_i)\cap f^{-1}(U)$, as desired.
+  \hfill $\square$
+
 \subsection*{Exercise 9}
+  Consider the map $f\colon\M(2,\R)\to S(n)$, where $S(n)$ is the set of
+  symmetric $n\times n$ matrices, defined by $A\mapsto AA^T$. Note that
+  $O(n)=f^{-1}(I_n)$. Since $f$ is continuous, $O(n)$ is closed.
+
+  Next, we take the hint by ``flattening'' $O(n)$ into $\R^{n^2}$. Note that,
+  for $x\in\R^{n^2}$, we have $\|x\|^2=\sum_{i=1}^{n^2}x_i^2$. Hence, for $A\in
+  O(n)$, we have $\|A\|^2=\sum_{i=1}^n\sum_{j=1}^n{a_{ij}^2}=\sum_{i=1}^{n}1=n$,
+  so $A$ is bounded. Since $O(n)$ is analogous to a subset of $\R^{n^2}$ and
+  since it is closed and bounded, by Heine-Borel it is also compact.
+  \hfill $\square$
+
 \subsection*{Exercise 12}
+  Consider the maps $f\colon\M(2,\R)\to\R^4$ and $\det\colon\R^4\to\R$ defined
+  by $
+  \left(
+    \begin{smallmatrix}
+      a   &   b\\
+      c   &   d
+    \end{smallmatrix}
+  \right)
+  \mapsto(a,b,c,d)$ and $(a,b,c,d)\mapsto ad-bc$, respectively. Let $A\in
+  \M(2,\R)$, then $d\det\nolimits_{f(A)}=(d,-c,-b,a)$, which is surjective iff
+  $f(A)\ne0$. But a $2\times2$ matrix of rank $1$ has at least one nonzero
+  entry, so $d\det_{f(A)}$ is indeed onto, implying $\det$ is a submersion on
+  any matrix of rank $1$. Note that the only matrix of rank $0$ is the zero
+  matrix and that $\det^{-1}(0)=\{A\in\M(2,\R)\mid\operatorname{rank}(A)<2\}$.
+  Hence, $\det$ is a submersion on $\M(2,\R)-\{0\}$ and, therefore, a
+  submanifold of $\R^4$.
+  \hfill $\square$
 
 \subsection*{Exercise A1}
   Note that $\M(n,\C)\cong\C^{n^2}$ and that $\det\colon\M(n,\C)\to\C$ is a smooth
