@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+% \newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\M}{M}
+% \DeclareMathOperator{\He}{H}
+% \DeclareMathOperator{\GL}{GL}
+% \DeclareMathOperator{\SL}{SL}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 5}
+\author{Roy Howie}
+\date{February 23, 2017}
+\maketitle
+
+\section*{1.5 Transversality}
+  \subsection*{Exercise 2}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        Yes, this is one of the given examples.
+      }
+      \item {
+        Yes, let $v$ be a vector in the $xy$-plane such that $v$ is not a
+        multiple of $(3,2,0)$, then the three vectors $v$, $(3,2,0)$ and $(0,4,
+        -1)$ span $\R^3$.
+      }
+      \item {
+        No, because the $z$-dimension of any combination will always be zero.
+      }
+      \item {
+        Since $T_x\R^a=\R^a$, these two spaces are transversal iff $k+l\geq n$.
+      }
+      \item {
+        Tricky. The two spaces span $\R^n$ iff $k\geq n$ or $l\geq n$, as one
+        space is a subset of or equal to the other.
+      }
+      \item {
+        Yes: $v=(a,b)\in V$ can be written as the sum of $(b,b)$ and $(a-b,0)$.
+      }
+      \item {
+        Yes. Let $A\in\M(n)$ be a canonical basis element, i.e., only a single
+        entry is nonzero and equal to 1. Then we can represent it via the sum
+        of a symmetric ($B$) and skew-symmetric ($C$) matrix. Suppose $a_{ij}
+        =1$, then let $b_{ij}=b_{ji}=1$, $c_{ij}=1$, and $c_{ji}=-1$, then
+        $A=\frac{1}{2}(A+B)$.
+      }
+      \qed
+    \end{enumerate}
+
+  \subsection*{Exercise 4}
+
+  \subsection*{Exercise 8}
+
+  \subsection*{Exercise 9}
+    Recall that if an eigenvalue $\lambda=1$, then there is a corresponding
+    eigenvector $v$ such that $Av=v$. Hence, if $1$ is not an eigenvalue, then
+    $Av\ne v$ for all $v\in V$. Thus $W\cap\Delta=\varnothing$, so
+    transversality is vacuously true.
+
+    Conversely, suppose $1$ is an eigenvalue of $A$, then $W\cap\Delta=\Delta$,
+    so the tangent space of the intersection cannot span $V\times V$, meaning
+    $W$ is not transversal to $\Delta$. Thus, $1$ is not an eigenvalue of $A$.
+    \qed
+
+\section*{1.6 Homotopy and Stability}
+  \subsection*{Exercise 3}
+  \subsection*{Exercise 4}
+  \subsection*{Exercise 6}
+  \subsection*{Exercise 7}
+  \subsection*{Exercise 9}
+
+\end{document}
