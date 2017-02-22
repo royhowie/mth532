@@ -8,15 +8,8 @@
 \usepackage{mathtools}
 \usepackage{parskip}
 
-% \newcommand{\N}{\mathbb{N}}
-% \newcommand{\Z}{\mathbb{Z}}
-% \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
-% \newcommand{\C}{\mathbb{C}}
 \DeclareMathOperator{\M}{M}
-% \DeclareMathOperator{\He}{H}
-% \DeclareMathOperator{\GL}{GL}
-% \DeclareMathOperator{\SL}{SL}
 
 \begin{document}
 
@@ -60,8 +53,31 @@
     \end{enumerate}
 
   \subsection*{Exercise 4}
+    Let $h\in T_yX\cap T_yZ$, then $h$ is tangent to both $X$ and $Z$, meaning
+    it is tangent to $X\cap Z$. Hence, it is in the tangent space of $X\cap Z$,
+    i.e., $h\in T_y(X\cap Z)$.
+
+    On the other hand, if $X$ and $Z$ are transversal, then $X\cap Z$ is a
+    submanifold of both $X$ and $Z$. Consider the natural inclusion maps $f
+    \colon X\cap Z\to X$ and $g\colon X\cap Z\to Z$, then $df_p\colon T_p(X\cap
+    Z)\to T_pX$ and $dg_p\colon T_p(X\cap Z)\to T_pZ$ imply that
+    $T_p(X\cap Z)\subset T_pX$ and $T_p(X\cap Z)\subset T_pZ$.
+    Therefore, $T_p(X\cap Z)\subset T_pX\cap T_pZ$.
+
+    Hence, $T_p(X\cap Z)=T_pX\cap T_pZ$.
+    \qed
 
   \subsection*{Exercise 8}
+    Since at any point, the hyperboloid and sphere both have tangent planes,
+    in order to be transversal, these two planes must not overlap. Otherwise,
+    the ambient space cannot be ``filled.''
+
+    Clearly, when $a=1$ and $z=0$, there is a problem, as both objects have
+    tangent planes parallel to the $z$-axis. In fact, they are not transversal
+    when $a=1$. For $a>1$, the two objects do not intersect, so transversality
+    is uninterestingly true. For $a<1$, the intersection is a horizontal circle;
+    the tangent planes do not coincide, so the two objects are transversal.
+    \qed
 
   \subsection*{Exercise 9}
     Recall that if an eigenvalue $\lambda=1$, then there is a corresponding
