@@ -92,9 +92,47 @@
 
 \section*{1.6 Homotopy and Stability}
   \subsection*{Exercise 3}
+    Let $x\sim y$ be an equivalence relation on $X$ with $x\sim y$ iff there is
+    a smooth curve $f\colon[0,1]\to X$ such that $f(0)=x$ and $f(1)=y$. Per the
+    hint, we shall show $\sim$ is equivalent to homotopy.
+
+    Let $F\colon X\times[0,1]\to X$ be a homotopy with $F(c,0)=x$ and $F(c,1)=y$
+    for all $c\in X$. Then, if $x\sim y$ via $f\colon[0,1]\to X$, let $F(c,t)$
+    equal $f(t)$. Conversely, if $F$ is a homotopy as defined above, then let
+    $f(t)=F(c_0,t)$ for any $c\in X$, implying $x\sim y$. Hence, $\sim$ is an
+    equivalence relation.
+
+    Suppose $X/{\sim}$ has more than one component, then it can be parameterized
+    by disjoint open sets. However, then there are two points $x$ and $y$ which
+    cannot be connected. This is a contradiction, as $X$ is connected. Hence,
+    $X/{\sim}$ has a single component and the equivalence classes under $\sim$
+    are open.
+    \qed
+
   \subsection*{Exercise 4}
+    % Let $X$ be contractible and $f\colon Y\to X$ be a smooth map of manifolds.
+    % Let $id$ be the identity map on $X$ and let $c(x)\colon X\to X$ be the
+    % constant map defined by $*\mapsto x$. Let $F\colon X\times[0,1]\to X$ be a
+    % homotopy between $id$ and $c(x)$, then we can construct a homotopy
+    % $\tilde{F}$ between $Y$ and $X$ defined by $\tilde{F}(y,t)=F(f(y),t)$, which
+    % is smooth. Note that $\tilde{F}(y,0)=f(y)$ and $\tilde{F}(y,1)=c(x)$; this
+    % implies that any smooth map is homotopic to the constant map and, therefore,
+    % any two smooth maps of manifolds are homotopic.
+    %
+    Let $X$ be contractible, $f\colon Y\to X$ be a smooth map of manifolds,
+    $c(x)\colon X\to X$ be the constant map defined by $*\mapsto x$, and $F$ be
+    a homotopy between $id$, the identity map on $X$, and $c(x)$.
+
+    Next, construct a homotopy $G$ between $Y$ and $X$ defined by
+    $G(y,t)=F(f(y),t)$. Note that $G(y,0)=id\circ f(y)=f(y)$ and $G(y,1)=
+    c(x)(1)=x$. Thus, any smooth map is homotopic to the constant map and,
+    therefore, any two smooth maps of manifolds are homotopic.
+    \qed
+
   \subsection*{Exercise 6}
+
   \subsection*{Exercise 7}
+
   \subsection*{Exercise 9}
 
 \end{document}
