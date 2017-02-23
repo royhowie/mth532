@@ -4,11 +4,13 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{braket}
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{parskip}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \DeclareMathOperator{\M}{M}
 
 \begin{document}
@@ -110,15 +112,6 @@
     \qed
 
   \subsection*{Exercise 4}
-    % Let $X$ be contractible and $f\colon Y\to X$ be a smooth map of manifolds.
-    % Let $id$ be the identity map on $X$ and let $c(x)\colon X\to X$ be the
-    % constant map defined by $*\mapsto x$. Let $F\colon X\times[0,1]\to X$ be a
-    % homotopy between $id$ and $c(x)$, then we can construct a homotopy
-    % $\tilde{F}$ between $Y$ and $X$ defined by $\tilde{F}(y,t)=F(f(y),t)$, which
-    % is smooth. Note that $\tilde{F}(y,0)=f(y)$ and $\tilde{F}(y,1)=c(x)$; this
-    % implies that any smooth map is homotopic to the constant map and, therefore,
-    % any two smooth maps of manifolds are homotopic.
-    %
     Let $X$ be contractible, $f\colon Y\to X$ be a smooth map of manifolds,
     $c(x)\colon X\to X$ be the constant map defined by $*\mapsto x$, and $F$ be
     a homotopy between $id$, the identity map on $X$, and $c(x)$.
@@ -130,9 +123,29 @@
     \qed
 
   \subsection*{Exercise 6}
+    This follows from exercise \textbf{1.6.4}. Suppose $f\colon S^1\to X$ is a
+    smooth map and suppose $X$ is contractible, then $f$ is homotopic to a
+    constant map on $X$. Let $x,y\in X$. Then there is a homotopy $F_1$ between
+    $x$ and $id$ and a homotopy $F_2$ between $id$ and $y$. Thus, there is a
+    homotopy $F_0$ between $x$ and $y$, so there is a smooth map connecting the
+    two points. $x$ and $y$ were arbitrary, so $X$ is connected. Hence, $X$ is
+    simply connected.
+    \qed
 
   \subsection*{Exercise 7}
+    Consider $S^{2k-1}\subset\R^{2k}\cong\C^k$. We know $z\mapsto ze^{i\pi}$
+    smoothly rotates a point $z\in\C$ by $\pi$. Consider $S^{2k-1}$ as a subset
+    of $\C^k$, i.e., $\set{(z_1,\cdots,z_k)\mid z_1^2+\cdots+z_k^2=1}$. Then
+    there is a smooth homotopy $R\colon S^{2k-1}\times[0,1]\to S^{2k-1}$ defined
+    by $(z_1,\cdots,z_k)\mapsto(z_1e^{i\pi{t}},\cdots,z_ke^{i\pi{t}})$ between
+    the identity and antipodal maps.
+    \qed
 
   \subsection*{Exercise 9}
+    Consider $t>0$ and note that, for $|tx|>2$, one has $p(tx)=0$. Therefore,
+    $f_t$ cannot have any of the properties \textbf{(a)} through \textbf{(f)}.
+    For \textbf{(d)}, consider $Z=\set{0}$. Since, $f_t\equiv0$ for
+    $|x|>2|t|^{-1}$, it is not transversal to $Z$.
+    \qed
 
 \end{document}
