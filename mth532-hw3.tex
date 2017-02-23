@@ -3,6 +3,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{parskip}
 \usepackage{enumitem}
 \usepackage{mathtools}
@@ -20,143 +21,121 @@
 \maketitle
 
 \subsection*{Exercise 3}
-Let $f\colon\R\to\R$ be a local diffeomorphism, then
-$f$ is a local homeomorphism and, therefore, an open map.
-Note that $f$ is continuous.  Since $\R$ is connected,
-the image of $f$ must be too. Hence, $f(\R)$ is an open interval.
-Furthermore, $df_x$ is everywhere nonzero, so $f$ is injective.
-Thus, $f$ maps diffeomorphically onto its image.
-\hfill $\square$
+  Let $f\colon\R\to\R$ be a local diffeomorphism, then $f$ is a local
+  homeomorphism and, therefore, an open map. Note that $f$ is continuous. Since
+  $\R$ is connected, the image of $f$ must be too. Hence, $f(\R)$ is an open
+  interval. Furthermore, $df_x$ is everywhere nonzero, so $f$ is injective.
+  Thus, $f$ maps diffeomorphically onto its image.
+  \qed
 
 \subsection*{Exercise 4}
-Consider $f\colon\R^2\to\R^2$ defined by
-$(x,y)\mapsto(e^x\cos y, e^x\sin y)$. Then $df$ is
-\begin{equation*}
-\begin{bmatrix}
-	e^x\cos y	& -e^x\sin y\\
-	e^x\sin y	& e^x\cos y
-\end{bmatrix}
-\end{equation*}
-So $\text{det }df = e^{2x}\cos^2y+e^{2x}\sin^y=e^{2x}$, which
-is everywhere nonzero. Hence, $f$ is a local diffeomorphism.
-However, $f$ is clearly not invertible, as it has period $2\pi$,
-so it is not a diffeomorphism onto its image.
-\hfill $\square$
+  Consider $f\colon\R^2\to\R^2$ defined by $(x,y)\mapsto(e^x\cos y, e^x\sin y)$.
+  Then $df$ is
+  \begin{equation*}
+    \begin{bmatrix}
+      e^x\cos{y} & -e^x\sin{y}\\
+      e^x\sin{y} &  e^x\cos{y}
+    \end{bmatrix}
+  \end{equation*}
+  So $\text{det }df = e^{2x}\cos^2y+e^{2x}\sin^y=e^{2x}$, which is everywhere
+  nonzero. Hence, $f$ is a local diffeomorphism. However, $f$ is clearly not
+  invertible, as it has period $2\pi$, so it is not a diffeomorphism onto its
+  image.
+  \qed
 
 \subsection*{Exercise 6}
-\begin{enumerate}[label=(\alph*)]
-\item{
-	Let $f\colon A\to B$ and $g\colon C\to D$.
-	If $f$ and $g$ are immersions, then the maps
-	$df_a\colon T_aA\to T_bB$ and $dg_c\colon T_cC\to T_dD$
-	are injective.
-	Note that $T_{(x,y)}(X\times Y)=T_xX\times T_yY$.
-	Hence, $df_a\times dg_c\colon
-		T_aA\times T_cC\to T_bB\times T_dD$
-	equals $d(f\times g)_{(a,c)}\colon
-		T_{(a,c)}(A\times C)\to T_{(b,d)}(B\times D)$.
-	Since $df_a$ and $dg_c$ are injective, so is
-	$d(f\times g)_{(a,c)}$.
-	Thus, $f\times g$ is an immersion.
-}
-\item{
-	Let $f\colon A\to B$ and $g\colon B\to C$ be immersions.
-	Note that $d(g\circ f)_x=dg_{f(x)}\circ df_x$
-	$df_a$ and $dg_{f(a)}$ are injective, so $dg_{f(a)}\circ df_a$
-	is injective for all $a\in A$.
-	Hence, $g\circ f$ is an immersion.
-}
-\item{
-	Let $Z$ be a submanifold of $X$, let
-	$i\colon Z\xhookrightarrow{} X$ be the inclusion map,
-	and let $f\colon X\to Y$ be an immersion.
-	Then $f|_Z\colon Z\to Y$ equals $f\circ i$.
-	Since $f$ is an immersion and $i$ is the inclusion map,
-	$f|_Z$ is also an immersion.
-}
-\item{
-	If $f\colon X\to Y$ is an immersion at $x$ and $y=f(x)$,
-	then, by the Local Immersion Theorem, there are local
-	coordinates about $x$ and $y$ such that
-	$f(x_1,\cdots,x_k)=(x_1,\cdots,x_k,0,\cdots,0)$.
-	However, if $\text{dim }X=\text{dim }Y$, then
-	$f(x_1,\cdots,x_k)=(x_1,\cdots,x_k)$, so $f$ is indeed
-	a  local diffeomorphism.
-}
-\hfill $\square$
-\end{enumerate}
+  \begin{enumerate}[label=(\alph*)]
+    \item{
+      Let $f\colon A\to B$ and $g\colon C\to D$. If $f$ and $g$ are immersions,
+      then the maps $df_a\colon T_aA\to T_bB$ and $dg_c\colon T_cC\to T_dD$ are
+      injective. Note that $T_{(x,y)}(X\times Y)=T_xX\times T_yY$. Hence, $df_a
+      \times dg_c\colon T_aA\times T_cC\to T_bB\times T_dD$ equals $d(f\times g)
+      _{(a,c)}\colon T_{(a,c)}(A\times C)\to T_{(b,d)}(B\times D)$. Since $df_a$
+      and $dg_c$ are injective, so is $d(f\times g)_{(a,c)}$. Thus, $f\times g$
+      is an immersion.
+    }
+    \item{
+      Let $f\colon A\to B$ and $g\colon B\to C$ be immersions. Note that $d(g
+      \circ f)_x=dg_{f(x)}\circ df_x$. $df_a$ and $dg_{f(a)}$ are injective, so
+      $dg_{f(a)}\circ df_a$ is injective for all $a\in A$. Hence, $g\circ f$ is
+      an immersion.
+    }
+    \item{
+      Let $Z$ be a submanifold of $X$, let $i\colon Z\xhookrightarrow{} X$ be
+      the inclusion map, and let $f\colon X\to Y$ be an immersion. Then $f|_Z
+      \colon Z\to Y$ equals $f\circ i$. Since $f$ is an immersion and $i$ is the
+      inclusion map, $f|_Z$ is also an immersion.
+    }
+    \item{
+      If $f\colon X\to Y$ is an immersion at $x$ and $y=f(x)$, then, by the
+      Local Immersion Theorem, there are local coordinates about $x$ and $y$
+      such that $f(x_1,\cdots,x_k)=(x_1,\cdots,x_k,0,\cdots,0)$. However, if
+      $\text{dim }X=\text{dim }Y$, then $f(x_1,\cdots,x_k)=(x_1,\cdots,x_k)$, so
+      $f$ is indeed a  local diffeomorphism.
+    }
+    \qed
+  \end{enumerate}
 
 \subsection*{Exercise 7}
-\begin{enumerate}[label=(\alph*)]
-\item{
-	Let $g\colon\R^1\to S^1$ be defined by
-	$t\mapsto(\cos2\pi t,\ \sin2\pi t)$, then
-	$dg_t = (-2\pi\sin2\pi t,\ 2\pi\cos2\pi t)$.
-	Since $dg_t\ne(0,0)$ for all $t$, by the
-	Inverse Function Theorem, $g$ is a local
-	diffeomorphism.
-}
-\item{
-	Let $G=g\times g\colon L\to S^1\times S^1$
-	be defined by $(a,b)\mapsto(\cos2\pi a,\ \sin2\pi a,
-	\cos2\pi b,\ \sin2\pi b)$, where $L\subset\R^2$
-	is a line of irrational slope. Without loss of generality,
-	suppose $L$ has no constant term, as that only serves to ``shift''
-	the image of $L$ about the torus. That is, let $i\in\R-\Q$
-	and define $L=\{(x,y)\mid y=ix\}$.
-	
-	Next, suppose $G(s,is)=G(t,it)$. Then $\cos2\pi s=\cos2\pi t$,
-	so $s-t\in\Z$. Similarly, $\cos2\pi is=\cos2\pi it$,
-	so $is-it=i(s-t)\in\Z$. But $i$ is irrational, so
-	$i(s-t)$ is in $\Z$ iff $s-t=0$. Thus, $G$ is injective.
-	\hfill $\square$
-}
-\end{enumerate}
+  \begin{enumerate}[label=(\alph*)]
+    \item{
+      Let $g\colon\R^1\to S^1$ be defined by $t\mapsto(\cos2\pi t,\sin2\pi t)$,
+      then $dg_t = (-2\pi\sin2\pi t,2\pi\cos2\pi t)$. Since $dg_t\ne(0,0)$ for
+      all $t$, by the Inverse Function Theorem, $g$ is a local diffeomorphism.
+    }
+    \item{
+      Let $G=g\times g\colon L\to S^1\times S^1$ be defined by $(a,b)\mapsto(
+      \cos2\pi a,\sin2\pi a,\cos2\pi b,\sin2\pi b)$, where $L\subset\R^2$ is a
+      line of irrational slope. Without loss of generality, suppose $L$ has no
+      constant term, as that only serves to ``shift'' the image of $L$ about the
+      torus. That is, let $i\in\R-\Q$ and define $L=\{(x,y)\mid y=ix\}$.
+
+      Next, suppose $G(s,is)=G(t,it)$. Then $\cos2\pi s=\cos2\pi t$, so $s-t\in
+      \Z$. Similarly, $\cos2\pi is=\cos2\pi it$, so $is-it=i(s-t)\in\Z$. But $i$
+      is irrational, so $i(s-t)$ is in $\Z$ iff $s-t=0$. Thus, $G$ is injective.
+      \qed
+    }
+  \end{enumerate}
 
 \subsection*{Exercise 8}
-Let $h\colon\R^1\to\R^2$ be defined by
-$t\mapsto\frac{1}{2}(e^t+e^{-t}, e^t-e^{-t})$.
-To show $h$ is an embedding, we must show that it is
-an immersion, injective, and proper. Note that
-$dh_t= \frac{1}{2}
-\left[
-	\begin{smallmatrix}
-		e^t-e^{-t}\\
-		e^t+e^{-t}
-	\end{smallmatrix}
-\right]$
-is injective for all $t$, as $e^{-t}$ is everywhere nonzero.
-Hence, $h$ is an immersion.
+  Let $h\colon\R^1\to\R^2$ be defined by $t\mapsto\frac{1}{2}(e^t+e^{-t},e^t-
+  e^{-t})$. To show $h$ is an embedding, we must show that it is an immersion,
+  injective, and proper. Note that $dh_t=\frac{1}{2}
+  \left[
+    \begin{smallmatrix}
+      e^t-e^{-t}\\
+      e^t+e^{-t}
+    \end{smallmatrix}
+  \right]$ is injective for all $t$, as $e^{-t}$ is everywhere nonzero. Hence,
+  $h$ is an immersion.
 
-Next, suppose $h$ is not injective. Then there exist $a\ne b$
-such that $h(a)=h(b)$. But then
-\begin{align*}
-	e^a+e^{-b} &= e^b+e^{-a}\\
-	e^{a+b}(e^a+e^{-b}) &= (e^b+e^{-a})e^{a+b}\\
-	e^a(e^{a+b}+1) &= (e^{b+a}+1)e^b\\
-	e^a &= e^b
-\end{align*}
-Since $x\mapsto e^x$ is injective, $a=b$. A contradiction, so
-$h$ is injective.
+  Next, suppose $h$ is not injective. Then there exist $a\ne b$ such that $h(a)=
+  h(b)$. But then
+  \begin{align*}
+    e^a+e^{-b}          &= e^b+e^{-a}           \\
+    e^{a+b}(e^a+e^{-b}) &= (e^b+e^{-a})e^{a+b}  \\
+    e^a(e^{a+b}+1)      &= (e^{b+a}+1)e^b       \\
+    e^a                 &= e^b
+  \end{align*}
+  Since $x\mapsto e^x$ is injective, $a=b$. A contradiction, so $h$ is
+  injective.
 
-Since $h$ is continuous, the preimage of a closed set is closed.
-We need only show the preimage of a bounded set is itself bounded.
-Suppose $B\subset\R^2$ is a bounded set. If
-$B\cap h(\R^1)=\varnothing$, we're done, as the empty set
-is trivially bounded.
-Otherwise, let $B_{x,y}(r)$ be the ball of radius $r$ centered at
-$(x,y)$ containing $B$. Let $x_0 = h^{-1}(x, h(x))$, then
-$h^{-1}(B)$ is bounded by the interval $(x_0-r,x_0+r)$.
+  Since $h$ is continuous, the preimage of a closed set is closed. We need only
+  show the preimage of a bounded set is itself bounded. Suppose $B\subset\R^2$
+  is a bounded set. If $B\cap h(\R)=\varnothing$, we're done, as the empty set
+  is trivially bounded. Otherwise, let $B_{x,y}(r)$ be the ball of radius $r$
+  centered at $(x,y)$ containing $B$. Let $x_0 = h^{-1}(x, h(x))$, then $h^{-1}
+  (B)$ is bounded by the interval $(x_0-r,x_0+r)$.
 
-Hence, $h$ is proper and thus an embedding.
+  Hence, $h$ is proper and thus an embedding.
 
-To show its image is one nappe of the hyperbola $x^2-y^2=1$, consider
-\begin{align*}
-	\frac{1}{4}(e^t+e^{-t})^2-\frac{1}{4}(e^t-e^{-t})^2 &= 1\\
-	(e^{2t}+2+e^{-2t})-(e^{2t}-2+e^{-2t}) &= 4\\
-	(e^{2t}-e^{2t})+(e^{-2t}-e^{-2t})+4 &= 4\\
-\end{align*}
-which clearly checks out.
-\hfill $\square$
+  To show its image is one nappe of the hyperbola $x^2-y^2=1$, consider
+  \begin{align*}
+    \frac{1}{4}(e^t+e^{-t})^2-\frac{1}{4}(e^t-e^{-t})^2 &= 1\\
+    (e^{2t}+2+e^{-2t})-(e^{2t}-2+e^{-2t})               &= 4\\
+    (e^{2t}-e^{2t})+(e^{-2t}-e^{-2t})+4                 &= 4\\
+  \end{align*}
+  which clearly checks out.
+  \qed
 
 \end{document}

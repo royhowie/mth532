@@ -2,8 +2,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{parskip}
+\usepackage{amsthm}
 \usepackage{enumitem}
+\usepackage{parskip}
 \usepackage{tkz-graph}
 \usetikzlibrary{arrows}
 
@@ -49,13 +50,13 @@
     $dg^{-1}_0\circ di_x\circ df_0=dg^{-1}_0\circ df_0$.
   Moving terms gives $di_x=(dg_0\circ dg^{-1}_0)\circ(df_0\circ df^{-1}_0)$.
   This is the identity map, so $di_x$ is indeed an inclusion map.
-  \hfill $\square$
+  \qed
 
 \subsection*{Exercise 3}
   Let $V$ be a vector subspace of $\R^N$ with dimension $n$. Then there exists a
   parameterization $f\colon\R^n\to V$. But $f$ is linear, so $df=f$. Thus,
   $T_x(V)=df(\R^n)=f(\R^n)=V$.
-  \hfill $\square$
+  \qed
 
 \subsection*{Exercise 4}
   Let $f\colon X\to Y$ be a diffeomorphism, then there is a smooth map $f^{-1}
@@ -63,7 +64,7 @@
   implying that $Id=df_x\circ df^{-1}_y$ for all $x\in X$ with $y=f(x)$. Hence,
   $df_x$ has an inverse in the form of $df^{-1}_y$, so it is indeed an
   isomorphism of tangent spaces.
-  \hfill $\square$
+  \qed
 
 \subsection*{Exercise 5}
   Let $k\ne l$ and suppose $f\colon\R^k\to\R^l$ is a diffeomorphism. Then $df_x
@@ -71,7 +72,7 @@
   $T_x(\R^k)=\R^k$ and $T_{f(x)}(\R^l)=\R^l$ for all $x$. But $\text{dim}\ \R^k=
   k\ne l=\text{dim}\ \R^l$, meaning $df$ is not bijective. But $df=f$, so $f$ is
   also not bijective. Contradiction! Hence, $f$ is not a diffeomorphism.
-  \hfill $\square$
+  \qed
 
 \subsection*{Exercise 8}
   Let $H=\{(x,y,z)\mid x^2+y^2-z^2=a\}$ be a hyperboloid and let $h\colon B_a(0)
@@ -95,7 +96,7 @@
     \end{smallmatrix}
   \right]$
   and the tangent space is the span of $dh_{(\sqrt{a},0,0)}$, or the yz-plane.
-  \hfill $\square$
+  \qed
 
 \subsection*{Exercise 9}
   \begin{enumerate}[label=(\arabic*)]
@@ -138,7 +139,7 @@
       $f\times g=i_x\circ f\circ\pi_x+i_y\circ g\circ\pi_y$. This implies
       $d(f\times g)_{(x,y)}=df_x\times dg_y$.
     }
-    \hfill $\square$
+    \qed
   \end{enumerate}
 
 \end{document}
