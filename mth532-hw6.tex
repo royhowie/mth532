@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{tikz}
+
+\usetikzlibrary{knots}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\M}{M}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 6}
+\author{Roy Howie}
+\date{March 2, 2017}
+\maketitle
+
+\section*{1.7 Sard's Theorem and Morse Functions}
+  \subsection*{Exercise 4}
+    Recall that the countable union of sets of measure zero has measure zero.
+    $\Q$ is countable and each of its points has measure zero. Therefore, $\Q$
+    has measure zero.
+    \qed
+
+  \subsection*{Exercise 6}
+    Per the hint, let $f\colon S^1\to S^k$ with $k>1$. Then $p\in S^k$ is a
+    regular value iff it is not in the image of $f$. But Sard's Theorem says
+    the set of critical values of a smooth map has measure zero, so there must
+    be a point $p_0\notin f(S^1)$. Again, per the hint, recall that $S^k$ minus
+    a single point is isomorphic to $\R^k$ via the stereographic projection.
+    Hence, from problem 1.6.6, as $\R^k$ is contractible, we have that it is
+    also simply connected. Thus $S^k$ is simply connected.
+    \qed
+
+\section*{1.8 Embedding Manifolds in Euclidean Space}
+  \subsection*{Exercise 5}
+    Let $p\colon T(X)\to X$ be the mentioned projection. Let $p=(x,v)\in T(X)$
+    and let $O(p)$ be an open neighborhood of $p$. Let $N$ be a neighborhood of
+    $x$ such that $a\colon N\to\R^k$ is locally equivalent to the canonical
+    submersion, i.e. $(x_1,x_2,\cdots,x_k)\mapsto(x_1,x_2,\cdots,x_l)$. Let $b$
+    be the same for the neighborhood $O(p)$. Let $p'$ be the restriction of $p$
+    to $O(p)$. Note that $a\circ p'\circ b^{-1}$ maps local coordinates to local
+    coordinates, so $p$ is a local submersion at $p$, which was arbitrary.
+    \qed
+
+  \subsection*{Exercise 6}
+    Let $\vec{v}$ be a vector field on $X$, then, per the given definition,
+    $\vec{v}(x)$ is tangent to $x$. Thus, we can define a smooth map $t\colon X
+    \to T(X)$ defined by $x\mapsto(x,\vec{v}(x))$. Then $p\circ t$ is the
+    identity map, so \textbf{(1)} implies \textbf{(2)}.
+
+    Conversely, assume there is a smooth map $t$ (as before) such that $p\circ
+    t$ is the identity map. But then there is a function $\vec{v}$ such that
+    $p(x,\vec{v})=x$, so we may define $t$ as the map $x\mapsto(x,\vec{v}(x))$.
+    By the definition of $T(X)$, we have that both $x$ and $\vec{v}(x)$ lie in
+    $\R^N$. Thus, $\vec{v}$ is a vector field on $X$ and \textbf{(2)} implies
+    \textbf{(1)}.
+    \qed
+
+  \subsection*{Exercise 7}
+    (Haha, I used this hint on my past algebra exam!) Let $x\in S^k$ and let $k$
+    be odd. Suppose $x=(x_1,x_2,\cdots,x_{k+1})$ and note that $x^\perp=(-x_2,
+    x_1,\cdots,-x_{k+1},x_{k})$ is orthogonal to $x$. Let $\vec{v}$ be the map
+    $x\mapsto x^\perp$. We wish only to show that $\vec{v}$ is nowhere
+    vanishing, so note that $|\vec{v}(x)|=|x^\perp|=|x|=1$.
+    \qed
+
+  \subsection*{Exercise 8}
+    Note that from 1.6.7 (last week's homework) we have that $x\mapsto-x$ is
+    homotopic to the identity iff $k$ is odd. But we just proved that $k$ is odd
+    if $S^k$ has a nonvanishing vector field (and it was given that this does
+    not occur for even $k$).
+    \qed
+
+  \subsection*{Exercise 10}
+    Let $X\subset\R^N$ be an immersion for $N>2k$ (otherwise, it's not very
+    interesting) and let $g\colon T(X)\to\R^N$ be the map $(x,v)\mapsto
+    df_x(v)$. Then by Sard's Theorem we can pick a regular value $a$ which is
+    not in the image of $g$. That means we can project $\R^{k+1}$ onto $\R^k$
+    via some map $\pi$, as there are $k$ dimensions orthogonal to $a$. We wish
+    to show that $\pi\circ f$ is an immersion. This is true, as $d(\pi\circ f)=
+    d\pi_{f(x)}\circ df_x=D$. So if $D(v)$ vanishes, then $df_x(v)=ta$ for some
+    $t\in\R$ (we used this fact in class), which is impossible as $a$ is a
+    regular value of $g$. Thus, we have dropped the dimension of our immersion
+    from $N$ to $N-1$. Repeat until $N=2k$.
+    \qed
+
+
+\section*{2.2 One-Manifolds and Some Consequences}
+  \subsection*{Exercise 1}
+    No, consider the 3-1 trefoil knot.
+    \begin{tikzpicture}
+      \begin{knot}[
+        consider self intersections,
+        flip crossing=2
+        clip width=5,
+      ]
+      \strand[thick,blue!40!black]
+        (90:2) to[out=180,in=-120,looseness=2]
+        (-30:2) to[out=60,in=120,looseness=2]
+        (210:2) to[out=-60,in=0,looseness=2] (90:2);
+      \end{knot}
+    \end{tikzpicture}
+    \qed
+
+\end{document}
