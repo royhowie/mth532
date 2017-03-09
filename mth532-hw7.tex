@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 7}
+\author{Roy Howie}
+\date{March 9, 2017}
+\maketitle
+
+\section*{2.1 Manifolds with Boundary}
+  \subsection*{Exercise 1}
+    Let $U\subset\R^k$ and $V\subset H^k$ be open neighborhoods of 0. Note that
+    $V-\{0\}$ is simply connected but $U-\{0\}$ is not. Hence, there is no
+    diffeomorphism between the two spaces. [Note: in a sense, problem 2.4.10 is
+    another example of this and can also be generalized to any dimension.]
+    \qed
+
+  \subsection*{Exercise 2}
+    Consider a diffeomorphism $f\colon X\to Y$ of manifolds with boundary. Pick
+    $p\in\delta X$, then there is an open neighborhood $O(p)$ about $p$ with the
+    property that $f|_{O(p)}$ is a linear isomorphism. Furthermore, $O(p)$ can
+    be parameterized by $U\subset H^k$ and $f|_{O(p)}$ is equivalent to $id
+    \colon U\to U$. It follows from this parameterization that $x\in\delta X$
+    iff $\delta f(x)\in\delta Y$.
+    \qed
+
+  \subsection*{Exercise 4}
+    Use the lemma from page 62. Consider the function $\pi\colon\R^3\to\R$
+    defined by $(x,y,z)\mapsto a-x^2-y^2+z^2$. Since $x^2+y^2-z^2\leq a$, we
+    have that $\pi(x)\geq0$ for all $x\in H$, where $H$ is the given solid
+    hyperboloid. Thus, by the lemma, $\pi^{-1}([0,\infty])=H$ is a manifold with
+    boundary.
+    \qed
+
+  \subsection*{Exercise 6}
+    Not sure how to ``check,'' other than to draw a single line around the
+    entire Möbius band without having to lift one's pen. Naturally, this doesn't
+    work for the cylinder.
+    \qed?
+
+    If the strip is twisted $n$ times before gluing, then the resulting object
+    is diffeomorphic to the cylinder iff $n$ is even and diffeomorphic to the
+    Möbius band iff $n$ is odd.
+    \qed
+
+\section*{2.2 One-Manifolds and Some Consequences}
+  \subsection*{Exercise 3}
+    A map which rotates the torus about its center by $\pi$ has no fixed points.
+    The proof of the Brouwer theorem fails because the solid torus has a hole in
+    its center, so the retraction to its boundary doesn't work.
+    \qed
+
+  \subsection*{Exercise 4}
+    Per the hint, consider the map from the open ball $f\colon B(0,a)\to\R^k$
+    specified in problem 1.1.4. Next, consider a continuous function $g\colon
+    \R^k\to\R^k$ with no fixed point, say $x\mapsto (x_1+1,x_2,\cdots,x_k)$.
+    Note that $f^{-1}$ exists. Thus, we have that $f^{-1}\circ g\circ f$ is a
+    map from $B(0,1)$ to itself with no fixed point.
+    \qed
+
+\section*{2.4 Intersection Theory Mod 2}
+  \subsection*{Exercise 7}
+    Per the hint, note that $\deg_2(id)\equiv1$. However, if $S^1$ were simply
+    connected, then every map $f\colon S^1\to S^1$ would be homotopic to a
+    constant map. But $\deg_2(f)\equiv0$ and homotopic maps must have the same
+    degree modulo 2. This is a contradiction, so $S^1$ is not simply connected.
+    \qed
+
+  \subsection*{Exercise 10}
+    Note that $T^2=S^1\times S^1$. Consider the simple, closed paths $S^1\times
+    \{a\}$ and $\{b\}\times S^1$, where $a,b\in S^1$. Note that they intersect
+    at a single point: $(a,b)\in T^2$.
+
+    On the other hand, consider two simple, closed, nonintersecting paths on
+    $S^2$. From problem 1.7.6, since $S^2$ is simply connected for $k>1$, these
+    paths are each contractible to a single point.
+
+    If there were a diffeomorphism between $S^2$ and $T^2$, this would be a
+    contradiction, as they each have different intersection numbers modulo 2.
+    \qed
+
+\end{document}
