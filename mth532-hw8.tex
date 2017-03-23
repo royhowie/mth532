@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 8}
+\author{Roy Howie}
+\date{March 23, 2017}
+\maketitle
+
+\section*{2.4 Intersection Theory Mod 2}
+  \subsection*{Exercise 1}
+    Let $f\colon\C\to\C$ be defined by $z\mapsto z^7+\cos(|z|^2)(1+93z^4)$. To
+    show there is a $z\in\C$ such that $f(z)=0$, note that $f(-10)<0<f(10)$. As
+    $f$ is continuous, by the Intermediate Value Theorem, there is an $z\in\C$
+    such that $f(z)=0$. (I suspect the book wanted us to construct a homotopy
+    between $z^7$ and $f$, then consider $\deg_2(f)$ over a sufficiently large
+    disk.)
+    \qed
+
+  \subsection*{Exercise 11}
+    Suppose $f\colon X\to Y$ is not surjective, there there is a point $y$
+    outside the image of $f$. Note $y$ is transversal to $f(X)$, as there is no
+    intersection, impying $I_2(f, \set{y})=0$. But $Y$ is connected, so there is
+    a homotopy between $y$ and some other point $y_0$ contained in the image of
+    $f$. As homotopic maps have the same degree mod 2, $\deg_2(f)=0$. Thus, for
+    surjective maps, $\deg_2(f)=1$.
+    \qed
+
+  \subsection*{Exercise 12}
+    Use exercise \textbf{2.4.11}. In this case, a map $f\colon X\to Y$ cannot be
+    surjective, so it must be that $\deg_2(f)=0$.
+    \qed
+
+\section*{3.2 Orientation}
+  \subsection*{Exercise 2}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        Note in this case the linear isomorphism $A$ from $V\to V$ which sends
+        $\beta$ to $\beta'=\set{v_1,\cdots,cv_i,\cdots,cv_k}$ is the identity
+        matrix with the entry at row and column $i$ replaced by $c$. Hence,
+        $\det A=c$, so $\beta'$ is equivalently oriented iff $c>0$ and $\beta'$
+        is oppositely oriented iff $c<0$.
+      }
+      \item{
+        Let $E_{i,j}$ be the elementary row operator matrix which switches row
+        $i$ with row $j$. Note $\det E_{i,j}=-1$ and that $E_{i,j}$ performs the
+        mentioned change of ordered basis. Hence, transposing two elements
+        produces an oppositely oriented basis.
+      }
+      \item{
+        Again, as in \textbf{(b)}, this is another elementary row operation
+        matrix, but with determinant one, thus thus producing an equivalently
+        oriented basis.
+      }
+      \qed
+    \end{enumerate}
+
+  \subsection*{Exercise 4}
+    Use exercise \textbf{3.2.2b}. Let $\dim V_1=a$ and $\dim V_2=b$, with
+    ordered bases $\beta_1=\set{x_1,\cdots,x_a}$ and $\beta_2=\set{y_1,\cdots,
+    y_b}$, respectively. Then $V_1\oplus V_2$ has an ordered basis $B=\set{x_1,
+    \cdots,x_a,y_1,\cdots,y_b}$. Similarly, $V_2\oplus V_1$ has an ordered basis
+    $B'=\set{y_1,\cdots,y_b,x_1,\cdots,x_a}$. Hence, we can construct a linear
+    map which is the composition of the elementary row operator which switches
+    $v_i$ with $v_{i+1}$. To go from $B$ to $B'$, this would have to be applied
+    $b$ times for each element in $V_1$, i.e. $ab$ times. [Start with $x_a$
+    and move it ``to the end,'' then do $x_{a-1}$, etc.]
+
+    Thus, the determinant of this linear map is $(-1)^{ab}=(-1)^{(\dim V_1)(\dim
+    V_2)}$.
+    \qed
+
+  \subsection*{Exercise 6}
+    Let $\beta=\set{v_1,\cdots,v_{k-1}}$ be an ordered basis for $\delta H^k$
+    and let $n$ be the outward facing normal. Then $\beta'=\set{n,\beta}$ has
+    the same sign as $\beta$. Note that $\beta'$ is oppositely oriented compared
+    to the standard ordered basis on $\R^k$. We can then ``move'' $n$ to the end
+    of the basis, which changes the sign by $(-1)^{k-1}$. We can then change $n$
+    to $-n$. Thus, for even $k$, the sign does not change, as desired, for we
+    found the opposite orientation of $\R^{k-1}$.
+    \qed
+
+
+\end{document}
