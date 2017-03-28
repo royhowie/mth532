@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 9}
+\author{Roy Howie}
+\date{March 30, 2017}
+\maketitle
+
+\section*{3.3 Oriented Intersection Number}
+  \subsection*{Exercise 2}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        From class, we have that the degree of the antipodal map is $(-1)^{k+1}$
+        for $S^k\to S^k$, as it consists of $k+1$ maps which send $x$ to $-x$.
+        This preserves orientation when $k$ is odd and reverses orientation when
+        $k$ is even.
+      }
+      \item{
+        Homotopic maps of connected spaces have the same degree. The identity
+        map has degree of 1. Thus, the antipodal map is homotopic to the
+        identity when $k$ is odd.
+      }
+      \item{
+        From exercises \textbf{1.8.7} and \textbf{1.8.8}, we have that $S^k$ has
+        a nonvanishing vector field when its antipodal map is homotopic to the
+        identity map. From \textbf{(b)}, this occurs iff $k$ is odd.
+      }
+      \item{
+        No, as $-1\equiv1\pmod{2}$, so whether orientation is preserved is lost.
+      }
+      \qed
+    \end{enumerate}
+
+  \subsection*{Exercise 7}
+    Per the hint, note that $z\mapsto\bar{z}$ is orientation reversing, i.e. the
+    map which sends a complex number to its complex conjugate has degree $-1$.
+    Then, use exercise \textbf{3.3.10}: for $X\xrightarrow{f}Y\xrightarrow{g}Z$,
+    $\deg(g\circ f)=\deg{f}*\deg{f}$.
+
+    As $z\mapsto\bar{z}^m$ is the composition
+    of $z\mapsto\bar{z}$ and $z\mapsto z^m$, which have degrees of $-1$ and $m$,
+    respectively, we have that $z\mapsto\bar{z}^m$ has degree $-m$.
+    \qed
+
+  \subsection*{Exercise 10}
+    Consider $X\xrightarrow{f}Y\xrightarrow{g}Z$ and let $c\in Z$ be a regular
+    value of $g\circ f$. Note that $c$ is also a regular value of $g$ and that
+    $g^{-1}(c)$ are regular values of $f$. Furthermore, recall that, for a
+    regular value $q$ and $f^{-1}(q)=\set{p_1,\cdots,p_k}$, the degree of $f$ is
+    defined as $\deg f=\sum_{i=1}^k\varepsilon_i(f)$, where $\varepsilon_i(f)=
+    \text{sign}\det df_{p_i}\in\set{-1,1}$.
+
+    Let $g^{-1}(c)=\set{y_1,\cdots,y_m}$ and let $f^{-1}(y_i)=\set{x_{i1},\cdots,
+    x_{in}}$.
+    \begin{align*}
+      \deg(g\circ f)
+        &=\sum_{i=1}^{mn}\varepsilon_i(g\circ f)\\
+        &=\sum_{i=1}^m\sum_{j=1}^n\varepsilon_i(g)\varepsilon_{ij}(f)\\
+        &=\sum_{i=1}^m\varepsilon_i(g)\sum_{j=1}^n\varepsilon_{ij}(f)\\
+        &=\deg(g)*\deg(f)
+    \end{align*}
+    \qed
+
+\end{document}
