@@ -20,15 +20,15 @@
   \subsection*{Exercise 2}
     \begin{enumerate}[label=\textbf{(\alph*)}]
       \item{
-        From class, we have that the degree of the antipodal map is $(-1)^{k+1}$
-        for $S^k\to S^k$, as it consists of $k+1$ maps which send $x$ to $-x$.
-        This preserves orientation when $k$ is odd and reverses orientation when
-        $k$ is even.
+        From class, we have that the degree of the antipodal map $S^k\to S^k$ is
+        $(-1)^{k+1}$, as it consists of $k+1$ maps each sending $x$ to $-x$.
+        Therefore, orientation is preserved for $k$ odd and reversed for $k$
+        even.
       }
       \item{
         Homotopic maps of connected spaces have the same degree. The identity
-        map has degree of 1. Thus, the antipodal map is homotopic to the
-        identity when $k$ is odd.
+        map has a degree of 1. Thus, the antipodal map is homotopic to the
+        identity iff $k$ is odd.
       }
       \item{
         From exercises \textbf{1.8.7} and \textbf{1.8.8}, we have that $S^k$ has
@@ -47,9 +47,9 @@
     Then, use exercise \textbf{3.3.10}: for $X\xrightarrow{f}Y\xrightarrow{g}Z$,
     $\deg(g\circ f)=\deg{f}*\deg{f}$.
 
-    As $z\mapsto\bar{z}^m$ is the composition
-    of $z\mapsto\bar{z}$ and $z\mapsto z^m$, which have degrees of $-1$ and $m$,
-    respectively, we have that $z\mapsto\bar{z}^m$ has degree $-m$.
+    As $z\mapsto\bar{z}^m$ is the composition of $z\mapsto\bar{z}$ and $z\mapsto
+    z^m$, which have degrees of $-1$ and $m$, respectively, we have that $z
+    \mapsto\bar{z}^m$ has degree $-m$.
     \qed
 
   \subsection*{Exercise 10}
@@ -68,7 +68,7 @@
         &=\sum_{i=1}^m\sum_{j=1}^n\varepsilon_i(g)\varepsilon_{ij}(f)\\
         &=\sum_{i=1}^m\varepsilon_i(g)\sum_{j=1}^n\varepsilon_{ij}(f)\\
         &=\deg(g)*\deg(f)
+        \tag*{\qed}
     \end{align*}
-    \qed
 
 \end{document}
