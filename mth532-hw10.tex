@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 10}
+\author{Roy Howie}
+\date{April 6, 2017}
+\maketitle
+
+\section*{4.2 Exterior Algebra}
+  \subsection*{Exercise 1}
+    Suppose $T\in\Lambda^p(V^*)$ and $v_1,\cdots,v_p\in V$ are linearly
+    dependent, then there are constants $\set{a^1,\cdots,a^p}$, not all zero,
+    such that $a^iv_i=0$. Without loss of generality, suppose $v_1=a^2v_2+\cdots
+    +a^pv_p$. Therefore,
+    \begin{align*}
+      T(v_1,\cdots,v_p)
+        &= T(a^2v_2+\cdots+a^pv_p,v_2,\cdots,v_p)\\
+        &= a^2T(v_2,v_2,\cdots,v_p)+\cdots+a^pT(v_p,v_2,\cdots,v_p)\\
+        &= 0+\cdots+0\\
+        &= 0\tag*{\qed}
+    \end{align*}
+
+  \subsection*{Exercise 2}
+    Suppose $\phi_1,\cdots,\phi_p\in V^*$ are linearly dependent, then there are
+    constants $a^1,\cdots,a^p$, not all zero, such that $a^i\phi_i=0$. That is,
+    without loss of generality, $\phi_1$ can be written as the sum $c^2\phi_2+
+    \cdots+c^p\phi_p$. Recall $\phi_i\wedge\phi_i=0$, $c\wedge\phi_i=c\phi_i$
+    for constant $c$, and that the wedge product distributes over addition.
+    Therefore,
+    \begin{align*}
+      \phi_1\wedge\cdots\wedge\phi_p
+        &= (c^2\phi_2+\cdots+c^p\phi_p)\wedge\phi_2\wedge\cdots\wedge\phi_p\\
+        &= c^2\phi_2\wedge\phi_2\wedge\cdots\wedge\phi_p
+            +\cdots+
+            c^p\phi_p\wedge\phi_2\wedge\cdots\wedge\phi_p\\
+        &= 0+\cdots+0\\
+        &= 0\tag*{\qed}
+    \end{align*}
+
+  \subsection*{Exercise 6}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        Let $A\colon V\to V$ be a linear isomorphism which sends the basis
+        $B=\set{v_1,\cdots,v_k}$ to $B'=\set{v_1',\cdots,v_k'}$.
+
+        If $B$ and $B'$ are equivalently oriented, then $\det A$ is positive.
+        Next, for $T\in\Lambda^k(V)$, note that $A^*T=\det(A)T$. However, $A^*T$
+        was also defined to be $T(Av_1,\cdots,Av_k)=T(v_1',\cdots,v_k')$. Thus,
+        $T(B)$ and $T(B')$ have the same sign.
+
+        Conversely, suppose $T(B)$ and $T(B')$ have the same sign. Note that
+        $T(B')=A^*T=\det(A)T(B)$, implying that $\det A$ is positive. Therefore,
+        $B$ and $B'$ are equivalently oriented.
+      }
+      \item{
+        Let $T,S\in\Lambda^k(V^*)$ be two nonzero elements. Suppose $B=\set{v_1,
+        \cdots,v_k}$ is a positively oriented ordered basis. Without loss of
+        generality, suppose $T(B)$ is positive and $S(B)$ is negative. Let $A
+        \colon V\to V$ be a linear isomorphism, then $T(B)$ and $S(AB)$ should
+        have the same sign iff $\det A$ is negative. From \textbf{4.2.6a}, this
+        is clearly the case, as $S(AB=S(Av_1,\cdots,Av_k)=A^*S(B)=\det(A)S(B)
+        $. This produces a natural orientation, as we have defined two
+        equivalence classes: positive and negative.
+      }
+      \item{
+        Let $T\in\Lambda^k(V^*)$ be nonzero. Let $B$ and $B'$ be two ordered
+        bases. We define an orientation on $V$ by saying $B$ and $B'$ are
+        equivalently oriented iff $T(B)$ and $T(B')$ have the same sign. Let
+        $A\colon V\to V$ be a linear isomorphism such that $A(B)=B'$.
+
+        Do the opposite of \textbf{4.2.6b}. Note $T(B')=A^*T(B)=\det(A)T(B)$.
+        Thus, $T(B')$ and $T(B)$ have the same sign iff $\det A$ is positive,
+        implying that $B$ and $B'$ are equivalently oriented.
+      }
+      \qed
+    \end{enumerate}
+
+\end{document}
