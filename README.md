@@ -20,5 +20,7 @@ Here are the assignments so far:
 | 7 | 3-9-2017  | 2.1: 1, 2, 4, 6; 2.2: 3, 4; 2.4: 7, 10 |
 | 8 | 3-23-2017 | 2.4: 1, 11, 12; 3.2: 2, 4, 6           |
 | 9 | 3-30-2017 | 3.3: 2, 7, 10                          |
+|10 | 4-6-2017  | 4.2: 1, 2, 6                           |
+|11 | 4-13-2017 | 4.4: 1, 3, 4                           |
 
 Assignments marked with an asterisk (\*) contained additional problems.
