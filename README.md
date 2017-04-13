@@ -1,4 +1,4 @@
-#mth532: differential topology
+# mth532: differential topology
 
 The homework assignments are from *Differential Topology* by Victor Guillemin
 and Alan Pollack, unless the exercise number is prefixed with an `A`.

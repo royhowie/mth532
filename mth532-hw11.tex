@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+
+\DeclareSymbolFont{matha}{OML}{txmi}{m}{it}% txfonts
+\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 11}
+\author{Roy Howie}
+\date{April 13, 2017}
+\maketitle
+
+\section*{4.4 Integration on Manifolds}
+  \subsection*{Exercise 1}
+    A 0-form $f$ on a manifold $X$ is the same as a real-valued function $f
+    \colon X\to\R$; its integral on a single, positively (negatively) oriented
+    point is $f(x)$ (respectively $-f(x)$). Hence, the integral of $f$, a
+    0-form, over $Z$, a finite collection of points, is the desired sum:
+    $\sum_{z\in Z}\sigma(z)f(z)$.
+    \qed
+
+  \subsection*{Exercise 3}
+    \begin{equation}
+      \int_a^bc^*\omega
+        =\int_X\omega
+        =\int_Xdf
+        =\int_{\delta X}f
+        =f(q)-f(p)
+        \tag*{\qed}
+    \end{equation}
+
+  \subsection*{Exercise 4}
+    Note that $f$ preserves orientation, as it is smooth, and can be used to
+    pull back from $[a,b]$ to $[a_1,b_1]$. Furthermore, $(g\circ f)^*=f^*g^*$.
+    Hence,
+    \begin{equation*}
+      \int_a^bc^*\omega
+        =\int_{a_1}^{b_1}f^*c^*\omega
+        =\int_{a_1}^{b_1}(c\circ f)^*\omega
+        \tag*{\qed}
+    \end{equation*}
+
+  \subsection*{Exercise 8}
+    Define a 1-form on $\R^2-\set{0}$ by $\omega(x,y)=\left(\frac{-y}{x^2+y^2}
+    \right)dx+\left(\frac{x}{x^2+y^2}\right)dy=udx+vdy$.
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        Let $C$ be a circle of radius $r$ about the origin of the punctured
+        plane. Let $\gamma\colon[0,2\pi]\to C$ be an orientation preserving
+        parameterization of $C$ minus a single point defined by $t\mapsto(
+        r\cos(t),r\sin(t))$.
+        \begin{align*}
+          \int_C\omega
+            &=\int_0^{2\pi}p^*\omega\\
+            &=\int_0^{2\pi}(ux'+vy')rdt\\
+            &=\int_0^{2\pi}\frac{r^2}{r^2}\left(\frac{\sin^2(t)+\cos^2(t)}
+              {\cos^2(t)+\sin^2(t)}\right)rdt\\
+            &= 2\pi r
+        \end{align*}
+      }
+      \item{
+        Consider $\arctan(y/x)$, then
+        \begin{align*}
+          \frac{\delta}{\delta x}\arctan\left(\frac{y}{x}\right)
+            =\frac{1}{1+\left(\frac{y}{x}\right)^2}\left(\frac{\delta}{\delta x}
+            \frac{y}{x}\right)
+            =\frac{-\frac{y}{x^2}}{1+\frac{y^2}{x^2}}
+            =\frac{-y}{x^2+y^2}\\
+          \frac{\delta}{\delta y}\arctan\left(\frac{y}{x}\right)
+          =\frac{1}{1+\left(\frac{y}{x}\right)^2}\left(\frac{\delta}{\delta y}
+          \frac{y}{x}\right)
+          =\frac{\frac{1}{x}}{1+\frac{y^2}{x^2}}
+          =\frac{x}{x^2+y^2}
+        \end{align*}
+      }
+      \item{
+        Because the punctured plane is not simply connected.
+      }
+      \qed
+    \end{enumerate}
+
+  \subsection*{Exercise 9}
+    \textbf{Only if:} Let $h\colon\R\to S^1$ be defined by $t\mapsto(\cos(t),
+    \sin(t))$. Restrict $h$ to $[0,2\pi]\subset\R$, then $h$ is a
+    parameterization, so we can consider its pullback. Hence, for any 1-form
+    $\omega$ on $S^1$, we have $\int_{S^1}\omega=\int_0^{2\pi}h^*\omega$.
+
+    \textbf{If:} Define $g(t)=\int_0^th^*\omega$ and suppose $\int_{S^1}\omega=
+    0$, then $g(t)=0$, or that $t\in2\pi\Z$. This follows from the fact that
+    $g(t+2\pi)=\int_0^{t+2\pi}h^*\omega=\int_0^th^*\omega+\int_t^{t+2\pi}h^*
+    \omega=g(t)$, as $\int_t^{t+2\pi}h^*\omega$ can be reparameterized by some
+    orientation-preserving function $r\colon[0,2\pi]\to[t,t+2\pi]$, implying
+    $\int_t^{t+2\pi}h^*\omega=\int_0^{2\pi}r^*h^*\omega=0$.
+
+    Therefore, $g=f\circ h$ for some function $f$ on $S^1$.
+    \qed
+
+  \subsection*{Exercise 10}
+    Let $I_\omega=\int_{S^1}\omega$ and $I_\varv=\int_{S^1}\varv$ and denote
+    $c=I_\omega/I_\varv$, which makes sense as $I_\varv\ne0$. This implies
+    $\int_{S^1}\omega-c\varv=0$. Exercise \textbf{4.4.9} then implies that
+    $\omega$ is the differential of some function $f$, i.e. $\omega=df$.
+    \qed
+
+\end{document}
