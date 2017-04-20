@@ -7,7 +7,7 @@ The `.tex` files live in the main directory; compiled PDFs can be found in
 `compiled/`. Additional homework problems can be found in `additional-hw/` and
 are the ones referred to by an exercise number prefixed by `A`.
 
-Here are the assignments so far:
+#### Assignments:
 
 | # | due date  | problems                               |
 |---|-----------|----------------------------------------|
@@ -22,5 +22,6 @@ Here are the assignments so far:
 | 9 | 3-30-2017 | 3.3: 2, 7, 10                          |
 |10 | 4-6-2017  | 4.2: 1, 2, 6                           |
 |11 | 4-13-2017 | 4.4: 1, 3, 4                           |
+|12 | 4-20-2017 | 4.5: 1, 2; 4.7: 6, 8, 9, 10            |
 
 Assignments marked with an asterisk (\*) contained additional problems.

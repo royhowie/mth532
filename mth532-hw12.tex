@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\wprod}[2]{\,#1\wedge #2}
+\newcommand{\wprods}[3]{\,#1\wedge #2\wedge #3}
+
+\DeclareSymbolFont{matha}{OML}{txmi}{m}{it}% txfonts
+\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+
+\begin{document}
+
+\title{\vspace{-2cm}MTH 532 Homework 12}
+\author{Roy Howie}
+\date{April 20, 2017}
+\maketitle
+
+\section*{4.5 Exterior Derivative}
+  \subsection*{Exercise 1}
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+      \item{
+        Let $\omega=z^2\,dx\wedge dy+(z^2+2y)\,dx\wedge dz$, then $d\omega=
+        (2z-2)\wprods{dx}{dy}{dz}$.
+      }
+      \item{
+        Let $\omega=13x\,dx+y^2\,dy+xyz\,dz$, then $d\omega=xz\wprod{dy}{dz}-yz
+        \wprod{dz}{dx}$.
+      }
+      \item{
+        If $f,g$ are functions, then $d(fdg)=dfdg+f(ddg)$, but $d(dg)=0$, so
+        $d(fdg)=dfdg=\nabla f\nabla g$.
+      }
+      \item{
+        Let $\omega=(x+2y^3)(\wprod{dz}{dx}+\frac{1}{2}\wprod{dy}{dx})$, then
+        $d\omega=6y^2\wprods{dx}{dy}{dz}$.
+      }
+      \qed
+    \end{enumerate}
+  \subsection*{Exercise 2}
+    Let $F=\left(\frac{-y}{x^2+y^2},\,\frac{x}{x^2+y^2},\,0\right)$, then
+    $\text{curl}\,F=\nabla\times F=\left(0,0,\frac{\delta}{\delta x}\frac{x}{x^2
+    +y^2}-\frac{\delta}{\delta y}\frac{-y}{x^2+y^2}\right)=\left(0,0,
+    \frac{y^2-x^2}{(x^2+y^2)^2}+\frac{x^2-y^2}{(x^2+y^2)^2}\right)=\vec{0}$. It
+    cannot be written as the gradient of any function because derivatives are
+    unique and the gradient of $z=\arctan(y/x)$ restricted to $x$ and $y$
+    produces the given vector field, as found in exercise \textbf{4.4.8b}.
+
+\section*{4.7 Stokes Theorem}
+  \subsection*{Exercise 6}
+    Let $D$ be a compact region in $\R^3$ with smooth boundary $S$. Let $D'=D-
+    B_0$, where $B_0$ is a ball of infinitesmal radius centered at the origin.
+    Let $\vec{F}=q\vec{r}/r^3=q(x,y,z)(x^2+y^2+z^2)^{-3/2}$. Note that
+    $\text{div}(\vec{F})=0$ for all $r\ne0$. Denote $\delta B_0=S_R$, a sphere
+    of radius $r$. Then,
+    \begin{align*}
+      \int_S \vec{F}\cdot\vec{n}\,dA
+        &= \int_{D'}\text{div}(\vec{F})\,dV\\
+        &= \int_D 0\,dV - \int_{B_0} \text{div}(\vec{F})\,dV\\
+        &= \int_{S_R}\vec{F}\cdot\vec{n}\,dA\\
+        &= \int_{S_R} (q\vec{r}/r^3)\cdot(\vec{r}/r)\,dA\\
+        &= q/r^2\int_{S_R}\,dA=4\pi q
+        \tag*{\qed}
+    \end{align*}
+
+  \subsection*{Exercise 8}
+    Let $X=\delta W$ with $W$ compact and let $f\colon X\to Y$ be a smooth map.
+    Let $\omega$ be a closed $k$-form on $Y$ with $k=\dim X$. Suppose $f$
+    extends to all of $W$. Note that $W$ has dimension $l=k+1$, so $\omega$ is a
+    $l-1$ form. Apply the generalized Stokes theorem:
+    \begin{equation*}
+      \int_X f^*\omega
+        = \int_{W} d(f^*\omega)
+        = \int_{W} f^*(d\omega)
+        = 0
+    \end{equation*}
+    This follows from the fact that $\omega$ is closed on $Y$.
+    \qed
+
+  \subsection*{Exercise 9}
+    Let $f_0,f_1\colon X\to Y$ be smooth homotopic maps and let $X$ be a smooth,
+    boundaryless manifold of dimension $k$. Suppose $\omega$ is a closed
+    $k$-form on $Y$. Let $W=X\times[0,1]$ and consider the homotopy $F\colon W
+    \to Y$ with $F(x,0)=f_0(x)$ and $F(x,1)=f_1(x)$. Note $W$ is a manifold with
+    boundary, so, by exercise \textbf{4.7.8}, we have that $\int_{\delta W}F^*
+    \omega=0$. On the other hand, we have
+    \begin{equation*}
+      \int_{\delta W}F^*\omega
+        =\int_{X\times[0,1]}F^*\omega
+        =\int_{X\times\set{0}}F^*\omega + \int_{-X\times\set{1}}F^*\omega
+        =\int_{X}f_0^*\omega-\int_{X}f_1^*\omega
+    \end{equation*}
+    Thus, $\int_Xf_0^*\omega=\int_Xf_1^*\omega$.
+    \qed
+
+  \subsection*{Exercise 10}
+    Let $X$ be a simply connected manifold, $\omega$ be a closed 1-form on $X$,
+    and $\gamma$ be a closed curve in $X$. Note that $\gamma$ can contracted to
+    a single point, as $X$ is simply connected. Fix $c\in X$ and let $f_c\colon
+    S^1\to X$ be defined by $*\mapsto c$. Consider the homotopy between $\gamma$
+    and $f_c$, then, $\int_{S^1}\gamma^*\omega=\int_{S^1}f_c^*\omega$ by
+    exercise \textbf{4.7.9}. Hence,
+    \begin{equation*}
+      \oint_\gamma\omega
+        =\int_{S^1}\gamma^*\omega
+        =\int_{S^1}f_c^*\omega
+        = 0
+    \end{equation*}
+    This follows from \textbf{4.7.8}, as $f_c$ extends to all of $D^2$ and
+    $\delta D^2=S^1$, implying $\int_{\delta D^2}f_c^*\omega=0$.
+    \qed
+
+\end{document}
